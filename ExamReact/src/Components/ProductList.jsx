@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Product from "./Product";
+import ProductForm from "./ProductForm";
+
 const ProductList = ({ products }) => {
   const [product, setProduct] = useState([
     {
@@ -10,6 +12,7 @@ const ProductList = ({ products }) => {
   ]);
   return (
     <div className="product-list">
+      <ProductForm />
       {product.map((product, idx) => (
         <Product
           key={idx}

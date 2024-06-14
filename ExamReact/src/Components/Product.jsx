@@ -1,3 +1,5 @@
+import "./product.css";
+
 const Product = ({ name, description, price }) => {
   return (
     <div className="products">
