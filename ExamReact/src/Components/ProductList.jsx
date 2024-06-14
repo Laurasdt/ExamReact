@@ -2,18 +2,23 @@ import { useState } from "react";
 import Product from "./Product";
 import ProductForm from "./ProductForm";
 
-const ProductList = ({ products }) => {
-  const [product, setProduct] = useState([
+const ProductList = () => {
+  const [products, setProducts] = useState([
     {
       name: "Pomme",
       description: "Un fruit de saison",
       price: 1,
     },
   ]);
+
+  const addProduct = (newProduct) => {
+    setProducts([...products, newProduct]);
+  };
+
   return (
     <div className="product-list">
-      <ProductForm />
-      {product.map((product, idx) => (
+      <ProductForm addProduct={addProduct} />
+      {products.map((product, idx) => (
         <Product
           key={idx}
           name={product.name}

@@ -1,6 +1,25 @@
-const ProductFrom = () => {
+import { useState } from "react";
+
+const ProductFrom = ({ addProduct }) => {
+  const [name, setName] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newProduct = {
+      name,
+      description,
+      price: parseFloat(price),
+    };
+    addProduct(newProduct);
+    setName("");
+    setDescription("");
+    setPrice("");
+    console.log("Ajout d'un produit");
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="name">Product</label>
       <input type="text" name="name" id="name" />
       <label htmlFor="description">Description</label>
