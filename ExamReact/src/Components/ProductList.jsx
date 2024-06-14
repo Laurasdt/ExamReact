@@ -3,13 +3,7 @@ import Product from "./Product";
 import ProductForm from "./ProductForm";
 
 const ProductList = () => {
-  const [products, setProducts] = useState([
-    {
-      name: "Pomme",
-      description: "Un fruit de saison",
-      price: 1,
-    },
-  ]);
+  const [products, setProducts] = useState([]);
 
   const addProduct = (newProduct) => {
     setProducts([...products, newProduct]);

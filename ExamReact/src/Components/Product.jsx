@@ -3,7 +3,7 @@ import "./product.css";
 const Product = ({ name, description, price }) => {
   return (
     <div className="products">
-      <h1>{name}</h1>
+      <h2>{name}</h2>
       <p>{description}</p>
       <p>{price}€</p>
     </div>
