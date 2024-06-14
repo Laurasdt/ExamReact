@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./productForm.css";
 
 const ProductForm = ({ addProduct }) => {
   const [name, setName] = useState("");
@@ -21,7 +22,7 @@ const ProductForm = ({ addProduct }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Product</label>
+      <label htmlFor="name">Product : </label>
       <input
         type="text"
         name="name"
@@ -30,7 +31,7 @@ const ProductForm = ({ addProduct }) => {
         onChange={(e) => setName(e.target.value)}
         required
       />
-      <label htmlFor="description">Description</label>
+      <label htmlFor="description">Description : </label>
       <input
         type="text"
         name="description"
@@ -39,7 +40,7 @@ const ProductForm = ({ addProduct }) => {
         onChange={(e) => setDescription(e.target.value)}
         required
       />
-      <label htmlFor="price">Price</label>
+      <label htmlFor="price">Price : </label>
       <input
         type="number"
         name="price"
