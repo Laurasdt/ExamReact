@@ -3,7 +3,7 @@ const Product = ({ name, description, price }) => {
     <div className="products">
       <h1>{name}</h1>
       <p>{description}</p>
-      <p>{price}</p>
+      <p>{price}€</p>
     </div>
   );
 };
