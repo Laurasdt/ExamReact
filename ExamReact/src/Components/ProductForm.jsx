@@ -1,9 +1,10 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
-const ProductFrom = ({ addProduct }) => {
+const ProductForm = ({ addProduct }) => {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrice] = useState("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const newProduct = {
@@ -25,6 +26,7 @@ const ProductFrom = ({ addProduct }) => {
         type="text"
         name="name"
         id="name"
+        value={name}
         onChange={(e) => setName(e.target.value)}
         required
       />
@@ -33,7 +35,8 @@ const ProductFrom = ({ addProduct }) => {
         type="text"
         name="description"
         id="description"
-        onChange={(e) => setName(e.target.value)}
+        value={description}
+        onChange={(e) => setDescription(e.target.value)}
         required
       />
       <label htmlFor="price">Price</label>
@@ -51,4 +54,4 @@ const ProductFrom = ({ addProduct }) => {
   );
 };
 
-export default ProductFrom;
+export default ProductForm;
